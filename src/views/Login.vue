@@ -49,6 +49,7 @@ export default {
         console.log(error);
         if (error.response.status === 401 || error.response.status === 403) {
           console.log('Usuário ou senha inválidos');
+          alert("Usuário ou senha inválidos!");
         }
         else {
           this.sucesso();
