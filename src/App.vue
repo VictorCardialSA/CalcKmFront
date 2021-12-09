@@ -5,6 +5,9 @@
       <b active v-if="!conferetoken()">
         <router-link to="/login">Login</router-link> |
       </b>
+      <b active v-else>
+        <router-link to="/login">Logout</router-link> |
+      </b>
       <b active v-if="conferetoken()">
       <router-link to="/formulario">Formulario</router-link> |
       </b>
