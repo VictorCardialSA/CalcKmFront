@@ -2,12 +2,33 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/login">Login</router-link> |
+      <b-nav-item active v-if="!conferetoken()">
+        <router-link to="/login">Login</router-link> |
+      </b-nav-item>
+      <b-nav-item active v-if="conferetoken()">
+      <router-link to="/formulario">Formulario</router-link> |
+      </b-nav-item>
       <router-link to="/help">Help</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+
+export default {
+
+  methods:{
+    conferetoken(){
+      if(localStorage.jwtToken){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  }
+}
+</script>
 
 <style>
 #app {
