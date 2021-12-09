@@ -2,12 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <b-nav-item active v-if="!conferetoken()">
+      <b active v-if="!conferetoken()">
         <router-link to="/login">Login</router-link> |
-      </b-nav-item>
-      <b-nav-item active v-if="conferetoken()">
+      </b>
+      <b active v-if="conferetoken()">
       <router-link to="/formulario">Formulario</router-link> |
-      </b-nav-item>
+      </b>
       <router-link to="/help">Help</router-link>
     </div>
     <router-view/>

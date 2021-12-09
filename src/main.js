@@ -11,7 +11,7 @@ if(localStorage.jwtToken){
   setAuthHeader(false);
 }
 
-axios.defaults.baseURL = 'https://8080-coral-baboon-v8mcgx2z.ws-us21.gitpod.io/calculo_do_Km/';
+axios.defaults.baseURL = 'https://8080-coral-koala-9adf1kmd.ws-us21.gitpod.io/calculo_do_Km/';
 
 Vue.config.productionTip = false
 
