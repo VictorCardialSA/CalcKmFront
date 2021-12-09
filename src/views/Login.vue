@@ -59,7 +59,7 @@ export default {
     sucesso() {
       this.setUsuario(this.nome);
       this.setSenha(this.senha);
-      this.$router.push('/formulario');
+      this.$router.push('/');
     }
   }
 }
