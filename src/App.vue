@@ -6,7 +6,8 @@
         <router-link to="/login">Login</router-link> |
       </b>
       <b active v-else>
-        <router-link to="/login">Logout</router-link> |
+        <!--<a @click="logout()"><u>Logout</u></a> | -->
+        <a @click="logout()" href="/" >Logout</a> |
       </b>
       <b active v-if="conferetoken()">
       <router-link to="/formulario">Formulario</router-link> |
@@ -28,6 +29,12 @@ export default {
       }else{
         return false;
       }
+    },
+    logout() {
+      localStorage.removeItem("jwtToken");
+      localStorage.removeItem("username");
+      localStorage.removeItem("role");
+      localStorage.removeItem("my-app");
     }
   }
 }
