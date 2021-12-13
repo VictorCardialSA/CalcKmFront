@@ -16,11 +16,6 @@ Vue.use(VueRouter)
     component: () => import( '../views/Formulario.vue')
   },
   {
-    path: '/trabalho',
-    name: 'Trabalho',
-    component: () => import( '../views/Trabalho.vue')
-  },
-  {
     path: '/login',
     name: 'Login',
     // route level code-splitting

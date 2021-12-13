@@ -30,14 +30,14 @@
     
         <br>
 
-        <table v-if="this.verificaAdmin()">
+        <table>
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Modelo</th>
                     <th>Valor</th>
                     <th>Depreciacao</th>
-                    <th>Usuario</th>
+                    <th v-if="verificaAdmin()">Usuario</th>
                 </tr>
             </thead>
 
@@ -47,32 +47,12 @@
                     <td>{{ form.modelo }}</td>
                     <td>{{ form.valor_automovel }}</td>
                     <td>{{ form.depreciacao }}</td>
-                    <td>{{ form.usuario.nome }}</td>
+                    <td v-if="verificaAdmin()">{{ form.usuario.nome }}</td>
                     <button class="delete-btn" @click="deleteform(form.id)"> Deletar</button>
                 </tr>
             </tbody>
         </table>
 
-        <table v-else>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Modelo</th>
-                    <th>Valor</th>
-                    <th>Depreciacao</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr v-for="form in formularios" :key="form.id">
-                    <td>{{ form.id }}</td>
-                    <td>{{ form.modelo }}</td>
-                    <td>{{ form.valor_automovel }}</td>
-                    <td>{{ form.depreciacao }}</td>
-                    <button class="delete-btn" @click="deleteform(form.id)"> Deletar</button>
-                </tr>
-            </tbody>
-        </table>
 
     </div>
 
